@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace GradeBook.GradeBooks
 {
@@ -15,19 +16,21 @@ namespace GradeBook.GradeBooks
             {
                 throw new InvalidOperationException();
             }
-            if (averageGrade < (int)Math.Ceiling(Students.Count* 0.2))
+            int threshold = (int)Math.Ceiling(Students.Count * 0.2);
+            var grades = Students.OrderByDescending(i => i.AverageGrade).Select(i => i.AverageGrade).ToList();
+            if (grades[threshold-1] < averageGrade)
             {
                 return 'A';
             }
-            else if (averageGrade < (int)Math.Ceiling(Students.Count * 0.4))
+            else if (grades[threshold *2- 1] < averageGrade)
             {
                 return 'B';
             }
-            else if (averageGrade < (int)Math.Ceiling(Students.Count * 0.6))
+            else if (grades[threshold*3 - 1] < averageGrade)
             {
                 return 'C';
             }
-            else if (averageGrade < (int)Math.Ceiling(Students.Count * 0.8))
+            else if (grades[threshold*4 - 1] < averageGrade)
             {
                 return 'D';
             }
