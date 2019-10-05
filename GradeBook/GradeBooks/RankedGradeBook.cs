@@ -18,7 +18,7 @@ namespace GradeBook.GradeBooks
             }
             int threshold = (int)Math.Ceiling(Students.Count * 0.2);
             var grades = Students.OrderByDescending(i => i.AverageGrade).Select(i => i.AverageGrade).ToList();
-            if (averageGrade > grades[threshold-1])
+            if (averageGrade >= grades[threshold-1])
             {
                 return 'A';
             }
