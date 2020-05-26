@@ -43,7 +43,7 @@ namespace GradeBook.UserInterfaces
             BaseGradeBook gradeBook;
             if (parts[2].Equals("standard"))
                 gradeBook = new StandardGradeBook(name);
-            else if (parts[2].Equals("standard"))
+            else if (parts[2].Equals("ranked"))
                 gradeBook = new RankedGradeBook(name);
             else
             {
