@@ -117,22 +117,22 @@ namespace GradeBook.GradeBooks
                     else
                         return 4;
                 case 'B':
-                    if (IsWeighted && studentType == StudentType.Honors)
+                    if (IsWeighted && (studentType == StudentType.Honors || studentType == StudentType.Honors))
                         return 4;
                     else
                         return 3;
                 case 'C':
-                    if (IsWeighted && studentType == StudentType.Honors)
+                    if (IsWeighted && (studentType == StudentType.Honors || studentType == StudentType.Honors))
                         return 3;
                     else
                         return 2;
                 case 'D':
-                    if (IsWeighted && studentType == StudentType.Honors)
+                    if (IsWeighted && (studentType == StudentType.Honors || studentType == StudentType.Honors))
                         return 2;
                     else
                         return 1;
                 case 'F':
-                    if (IsWeighted && studentType == StudentType.Honors)
+                    if (IsWeighted && (studentType == StudentType.Honors || studentType == StudentType.Honors))
                         return 1;
                     else
                         return 0;
